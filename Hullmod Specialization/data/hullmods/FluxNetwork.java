@@ -39,7 +39,7 @@ public class FluxNetwork extends BaseHullMod {
 		
 		CombatEngineAPI engine = Global.getCombatEngine();
 		
-		String key = "core_reload_data_key" + "_" + ship.getId();
+		String key = "core_network_data_key" + "_" + ship.getId();
 		FluxNetworkData data = (FluxNetworkData) engine.getCustomData().get(key);
 		if (data == null) {
 			data = new FluxNetworkData();
