@@ -13,7 +13,7 @@ import com.fs.starfarer.api.util.IntervalUtil;
 public class MissileReloader extends BaseHullMod {
 
 	
-	public static String MR_DATA_KEY = "core_reload_data_key";
+	public static String MR_DATA_KEY = "core_reloader_data_key";
 	
 	public static class MissileReloaderData {
 		IntervalUtil interval = new IntervalUtil(15f, 20f);
