@@ -21,8 +21,8 @@ public class ExoticAmmunition extends BaseHullMod {
 	
 	@Override
     public String getDescriptionParam(int index, HullSize hullSize) {
-        if (index == 0) return "" + (int) PROJECTILE_SPEED_MOD + "%";
-        if (index == 1) return "" + (int) BALLISTIC_DAMAGE_MOD + "%";
+        if (index == 0) return "" + (int) BALLISTIC_DAMAGE_MOD + "%";
+        if (index == 1) return "" + (int) PROJECTILE_SPEED_MOD + "%";
         return null;
     }
 }
