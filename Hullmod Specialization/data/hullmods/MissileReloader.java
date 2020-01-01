@@ -46,16 +46,16 @@ public class MissileReloader extends BaseHullMod {
 			for (WeaponAPI w : ship.getAllWeapons()) {
 				if (w.getType() != WeaponType.MISSILE) continue;
 				int currentAmmo = w.getAmmo();
-				int MaxAmmo = w.getMaxAmmo();
-				int newAmmo = MaxAmmo;
+				int maxAmmo = w.getMaxAmmo();
+				int newAmmo = maxAmmo;
 				
-				if (w.usesAmmo() && currentAmmo < MaxAmmo) {
-					newAmmo = currentAmmo + (MaxAmmo / 4);
+				if (w.usesAmmo() && currentAmmo < maxAmmo) {
+					newAmmo = currentAmmo + (maxAmmo / 4);
 					if (newAmmo == currentAmmo){
 						newAmmo = newAmmo + 1;
 					}
-					if (newAmmo > MaxAmmo){
-						w.setAmmo(MaxAmmo);
+					if (newAmmo > maxAmmo){
+						w.setAmmo(maxAmmo);
 					} else {
 						w.setAmmo(newAmmo);
 					}
