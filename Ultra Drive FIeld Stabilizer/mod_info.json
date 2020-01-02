@@ -1,0 +1,9 @@
+{
+	"id":"ultra_drive_field_stabilizer",
+	"name":"Ultra Drive Field Stabilizer",
+    "utility": "true",
+	"author":"Kenshkrix",
+	"version":"1.0",
+	"description":"Adds a super OP drive field stabilizer",
+    "gameVersion":"0.9.1a"
+}
