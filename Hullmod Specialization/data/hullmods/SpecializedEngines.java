@@ -11,12 +11,8 @@ public class SpecializedEngines extends BaseLogisticsHullMod {
 	public static final float MANEUVER_MOD = -45f;
 	public static final float ARMOR_PENALTY_MULT = 0.5f;
 	
-//	private static final int STRENGTH_PENALTY = 50;
-//	private static final int PROFILE_PENALTY = 50;
 	
 	public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
-//		stats.getSensorProfile().modifyPercent(id, PROFILE_PENALTY);
-//		stats.getSensorStrength().modifyMult(id, 1f - STRENGTH_PENALTY * 0.01f);
 	
 		stats.getMaxBurnLevel().modifyFlat(id, BURN_LEVEL_BONUS);
 		
@@ -32,8 +28,6 @@ public class SpecializedEngines extends BaseLogisticsHullMod {
 		
 		if (index == 0) return "" + BURN_LEVEL_BONUS;
 		if (index == 1) return "" + ((int) MANEUVER_MOD) + "%";
-//		if (index == 1) return "" + STRENGTH_PENALTY + "%";
-//		if (index == 2) return "" + PROFILE_PENALTY + "%";
 		return null;
 	}
 

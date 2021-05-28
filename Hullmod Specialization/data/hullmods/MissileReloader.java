@@ -12,17 +12,25 @@ import com.fs.starfarer.api.util.IntervalUtil;
 
 public class MissileReloader extends BaseHullMod {
 
+	public static final float MIN_RELOAD_TIME = 15f;
+	public static final float MAX_RELOAD_TIME = 25f;
+	public static final float RELOAD_FRACTION_NUMERATOR = 1f;
+	public static final float RELOAD_FRACTION_DENOMINATOR = 4f;
 	
 	public static String MR_DATA_KEY = "core_reloader_data_key";
 	
 	public static class MissileReloaderData {
-		IntervalUtil interval = new IntervalUtil(15f, 20f);
+		IntervalUtil interval = new IntervalUtil(MIN_RELOAD_TIME, MAX_RELOAD_TIME);
 	}
 	
 	public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
 	}
 		
 	public String getDescriptionParam(int index, HullSize hullSize) {
+		if (index == 0) return "" + (int) MIN_RELOAD_TIME;
+		if (index == 1) return "" + (int) MAX_RELOAD_TIME;
+		if (index == 2) return "" + (int) RELOAD_FRACTION_NUMERATOR;
+		if (index == 3) return "" + (int) RELOAD_FRACTION_DENOMINATOR;
 		return null;
 	}
 	
@@ -47,13 +55,14 @@ public class MissileReloader extends BaseHullMod {
 				if (w.getType() != WeaponType.MISSILE) continue;
 				int currentAmmo = w.getAmmo();
 				int maxAmmo = w.getMaxAmmo();
-				int newAmmo = maxAmmo;
 				
 				if (w.usesAmmo() && currentAmmo < maxAmmo) {
-					newAmmo = currentAmmo + (maxAmmo / 4);
-					if (newAmmo == currentAmmo){
-						newAmmo = newAmmo + 1;
+					float numerator = maxAmmo * RELOAD_FRACTION_NUMERATOR;
+					float reloadCount = numerator / RELOAD_FRACTION_DENOMINATOR;
+					if (reloadCount < 1){
+						reloadCount = 1;
 					}
+					int newAmmo = currentAmmo + (int)reloadCount;
 					if (newAmmo > maxAmmo){
 						w.setAmmo(maxAmmo);
 					} else {

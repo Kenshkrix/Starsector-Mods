@@ -40,8 +40,8 @@ public class ExoticArmor extends BaseHullMod {
 		if (index == 1) return "" + ((Float) mag.get(HullSize.DESTROYER)).intValue();
 		if (index == 2) return "" + ((Float) mag.get(HullSize.CRUISER)).intValue();
 		if (index == 3) return "" + ((Float) mag.get(HullSize.CAPITAL_SHIP)).intValue();
-		if (index == 5) return "" + (int) HULL_MOD + "%";
-		if (index == 4) return "" + (int) MANEUVER_MOD + "%";
+		if (index == 4) return "" + (int) HULL_MOD + "%";
+		if (index == 5) return "" + (int) MANEUVER_MOD + "%";
 		return null;
 		//if (index == 0) return "" + ((Float) mag.get(hullSize)).intValue();
 		//return null;
