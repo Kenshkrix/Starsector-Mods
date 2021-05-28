@@ -12,6 +12,7 @@ import com.fs.starfarer.api.impl.campaign.ids.HullMods;
 @SuppressWarnings("unchecked")
 public class EldritchFluxCoil extends BaseHullMod {
 
+	public static final String HULLMOD_NAME = "khs_eldritch_flux_coil";
 	public static final float FLUX_CAPACITY = 4000f;
 	public static final float FLUX_DISSIPATION = 200f;
 	public static final int HARD_FLUX_DISSIPATION_PERCENT = 5;
@@ -27,7 +28,7 @@ public class EldritchFluxCoil extends BaseHullMod {
 		if (data == null) return;
 		int count = 0;
 		for (FleetMemberAPI ship : data.getMembersListCopy()){
-			if (ship.getVariant().getHullMods().contains("eldritch_flux_coil")){
+			if (ship.getVariant().getHullMods().contains(HULLMOD_NAME)){
 				count = count + 1;
 			}
 		}
@@ -55,9 +56,9 @@ public class EldritchFluxCoil extends BaseHullMod {
 	}
 	
 	public String getDescriptionParam(int index, HullSize hullSize) {
-		if (index == 0) return "" + FLUX_CAPACITY;
-		if (index == 1) return "" + FLUX_DISSIPATION;
-		if (index == 2) return "" + HARD_FLUX_DISSIPATION_PERCENT;
+		if (index == 0) return "" + (int) FLUX_CAPACITY;
+		if (index == 1) return "" + (int) FLUX_DISSIPATION;
+		if (index == 2) return "" + HARD_FLUX_DISSIPATION_PERCENT + "%";
 		if (index == 3) return "" + SACRIFICES_REQUIRED;
 		if (index == 4) return "" + DAYS_PER_SACRIFICE;
 		return null;
