@@ -23,6 +23,9 @@ public class FluxNetwork extends BaseHullMod {
 		mag.put(HullSize.CAPITAL_SHIP, 200f);
 	}
 	
+	private static int NUMERATOR = 2;
+	private static int DENOMINATOR = 3;
+	
 	public static class FluxNetworkData {
 		IntervalUtil interval = new IntervalUtil(1f, 1f);
 	}
@@ -48,7 +51,8 @@ public class FluxNetwork extends BaseHullMod {
 		
 		data.interval.advance(amount);
 		if (data.interval.intervalElapsed()) {
-			if (ship.getCurrFlux() > (ship.getMaxFlux() / 2f)){
+			float fraction = (float)NUMERATOR / (float)DENOMINATOR;
+			if (ship.getCurrFlux() > (ship.getMaxFlux() * fraction)){
 				ship.getFluxTracker().increaseFlux(((Float) mag.get(ship.getHullSize())), true);
 			}
 		}
@@ -60,6 +64,8 @@ public class FluxNetwork extends BaseHullMod {
 		if (index == 1) return "" + ((Float) mag.get(HullSize.DESTROYER)).intValue();
 		if (index == 2) return "" + ((Float) mag.get(HullSize.CRUISER)).intValue();
 		if (index == 3) return "" + ((Float) mag.get(HullSize.CAPITAL_SHIP)).intValue();
+		if (index == 4) return "" + NUMERATOR;
+		if (index == 5) return "" + DENOMINATOR;
 		return null;
 	}
 

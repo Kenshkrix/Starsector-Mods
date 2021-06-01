@@ -12,8 +12,8 @@ import com.fs.starfarer.api.util.IntervalUtil;
 
 public class MissileReloader extends BaseHullMod {
 
-	public static final float MIN_RELOAD_TIME = 15f;
-	public static final float MAX_RELOAD_TIME = 25f;
+	public static final float MIN_RELOAD_TIME = 25f;
+	public static final float MAX_RELOAD_TIME = 30f;
 	public static final float RELOAD_FRACTION_NUMERATOR = 1f;
 	public static final float RELOAD_FRACTION_DENOMINATOR = 4f;
 	
