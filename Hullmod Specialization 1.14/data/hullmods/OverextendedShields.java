@@ -22,8 +22,8 @@ public class OverextendedShields extends BaseHullMod {
 	public String getDescriptionParam(int index, HullSize hullSize) {
 		if (index == 0) return "" + (int) SHIELD_ARC_MOD;
 		if (index == 1) return "" + (int) SHIELD_MOD + "%";
-		if (index == 2) return "" + (int) ((1f - SHIELD_TURN_MULT) * 100f) + "%";
-		if (index == 3) return "" + (int) ((1f - SHIELD_UNFOLD_MULT) * 100f) + "%";
+		if (index == 2) return "" + (int) -((1f - SHIELD_TURN_MULT) * 100f) + "%";
+		if (index == 3) return "" + (int) -((1f - SHIELD_UNFOLD_MULT) * 100f) + "%";
 		return null;
 	}
 
