@@ -4,32 +4,47 @@ Only works if installed on a single ship.
 Devours %s crew members every %s days.
 (Note: Will still devour crew even if installed onto multiple ships and thus rendered non-functional).",Increases flux capacity and dissipation. Adds a slight amount of hard flux dissipation. Devours a crew member every few days.,graphics/hullmods/quantum_disruptor.png,
 Exotic Ammunition,khs_exotic_ammunition,2,,Exotic,"offensive, req_spaceport","Weapons, Logistics, Requires Dock",20000,,,,10,20,30,50,data.hullmods.ExoticAmmunition,"Augment your ballistic projectile-based weapons with Exotic Matter, causing them deal an extra %s damage. The exotic materials will cause all projectiles to travel %s faster",Ballistic weapons do more damage and travel faster.,graphics/hullmods/expanded_magazines.png,
-Exotic Armor,khs_exotic_armor,2,,Exotic,"defensive, req_spaceport","Defenses, Logistics, Requires Dock",20000,,,,10,20,30,50,data.hullmods.ExoticArmor,"Increases the ship's armor by %s/%s/%s/%s points, depending on hull size. Reduces hull by %s and increases maneuverability by %s.","Increases armor and maneuverability, reduces hull.",graphics/hullmods/heavy_armor.png,
+Exotic Armor,khs_exotic_armor,2,,Exotic,"defensive, req_spaceport","Defenses, Logistics, Requires Dock",20000,,,,10,20,30,50,data.hullmods.ExoticArmor,"Increases the ship's armor by %s/%s/%s/%s points, depending on hull size. Reduces hull by %s and increases maneuverability by %s.
+Armor: +%s","Increases armor and maneuverability, reduces hull.",graphics/hullmods/heavy_armor.png,
 Exotic Crystalline Lenses,khs_exotic_crystalline_lenses,3,,Exotic,"offensive, req_spaceport","Weapons, Logistics, Requires Dock",30000,,,,15,30,45,75,data.hullmods.ExoticCrystallineLenses,"Increases beam damage by %s, beam flux cost by %s, beam range by %s.","Increases beam damage, flux cost, and range.",graphics/hullmods/advanced_optics.png,
 Exotic Engines,khs_exotic_engines,2,,Exotic,"engines, req_spaceport","Engines, Logistics, Requires Dock",20000,,,,8,16,24,40,data.hullmods.ExoticEngines,Increases the ship's top speed in combat by %s su/second regardless of hull size.,Increases combat speed.,graphics/hullmods/unstable_injector.png,
-Flux Capacitor,khs_flux_capacitor,1,,Exotic,special,Special,20000,,,,4,8,12,20,data.hullmods.FluxCapacitor,"Increases the ship's flux capacity by %s/%s/%s/%s, depending on hull size, reduces flux dissipation by %s/%s/%s/%s.",Increases flux capacity and reduces flux dissipation.,graphics/hullmods/flux_coil_adjunct.png,
+External Cargo Container,khs_external_cargo_container,1,,Exotic,special,Special,10000,,,,3,6,9,15,data.hullmods.ExternalCargoContainer,"Increases ship cargo capacity at the cost of speed, maneuverability, and armor.
+Cargo Capacity: %s
+Speed: %s
+Maneuverability: %s
+Armor: %s","Increases cargo capacity at the cost of speed, maneuverability, and armor",graphics/hullmods/expanded_cargo.png,
+Flux Capacitor,khs_flux_capacitor,2,,Exotic,special,Special,20000,,,,4,8,12,20,data.hullmods.FluxCapacitor,"Increases the ship's flux capacity by %s/%s/%s/%s, depending on hull size, reduces flux dissipation by %s/%s/%s/%s.
+Flux Capacity: %s
+Flux Dissipation: %s",Increases flux capacity and reduces flux dissipation.,graphics/hullmods/flux_coil_adjunct.png,
 Flux Funnel,khs_flux_funnel,2,,Exotic,special,Special,20000,,,,10,20,30,50,data.hullmods.FluxFunnel,Allows the ship to dissipate hard flux at %s of the normal rate while shields are on.,Allows dissipation of hard flux while shields are up.,graphics/hullmods/flux_shunt.png,
-Flux Network,khs_flux_network,1,,Exotic,special,Special,20000,,,,4,8,12,20,data.hullmods.FluxNetwork,"Increases the ship's flux dissipation by %s/%s/%s/%s, depending on hull size.
-If flux goes above %s/%s the network will begin generating hard flux at the same rate.","Increases flux dissipation at low flux, generates hard flux at high flux.",graphics/hullmods/flux_distributor.png,
-Gauss Coils,khs_gauss_coils,2,,Exotic,offensive,Weapons,30000,,,,8,16,24,40,data.hullmods.GaussCoils,Increases ballistic weapon flux cost by %s and rate of fire by %s.,Increases the flux cost and rate of fire for ballistic weapons.,graphics/hullmods/ballistics_integration.png,
-Heavy Bulkheads,khs_heavy_bulkheads,1,,Exotic,defensive,Defenses,20000,,,,4,8,12,20,data.hullmods.HeavyBulkheads,"Increases the ship's hull integrity by %s and armor by %s/%s/%s/%s, reduces maneuverability by %s. If disabled, the ship will not break apart and is almost always recoverable after the battle.","Increases hull integrity and armor, reduces maneuverability.",graphics/hullmods/reinforced_bulkheads.png,
+Flux Network,khs_flux_network,2,,Exotic,special,Special,20000,,,,4,8,12,20,data.hullmods.FluxNetwork,"Increases the ship's flux dissipation by %s/%s/%s/%s, depending on hull size.
+If flux goes above %s/%s the network will begin generating hard flux at the same rate.
+Flux Dissipation: %s","Increases flux dissipation at low flux, generates hard flux at high flux.",graphics/hullmods/flux_distributor.png,
+Gauss Coils,khs_gauss_coils,3,,Exotic,offensive,Weapons,30000,,,,8,16,24,40,data.hullmods.GaussCoils,Increases ballistic weapon flux cost by %s and rate of fire by %s.,Increases the flux cost and rate of fire for ballistic weapons.,graphics/hullmods/ballistics_integration.png,
+Heavy Bulkheads,khs_heavy_bulkheads,2,,Exotic,defensive,Defenses,20000,,,,4,8,12,20,data.hullmods.HeavyBulkheads,"Increases the ship's hull integrity by %s and armor by %s/%s/%s/%s, reduces maneuverability by %s. If disabled, the ship will not break apart and is almost always recoverable after the battle.","Increases hull integrity and armor, reduces maneuverability.",graphics/hullmods/reinforced_bulkheads.png,
 Hyperspace Comm Array,khs_hyperspace_comm_array,2,,Exotic,"special,logistics,req_spaceport","Special, Requires Dock",20000,,,,100,100,20,20,data.hullmods.CommArrayHullmod,"This comm array connects to the relay network every %s days to gather information about the sector, it replaces most of your armor and slows your ship down.
 It can only be equipped on Cruisers and Capital ships.
 Also it only accesses up to %s pieces of information when it connects.","Gain intel anywhere in the sector, lose armor and move speed",graphics/hullmods/nav_relay.png,
 Integrated Magazines,khs_integrated_magazines,1,,Exotic,offensive,Weapons,10000,,,,3,5,7,10,data.hullmods.IntegratedMagazines,"Increases the ammo capacity of ballistic and energy weapons by %s, reduces hull integrity by %s.",Increases ballistic and energy ammo capacity at the cost of max hull.,graphics/hullmods/expanded_magazines.png,
 Missile Reloader,khs_missile_reloader,3,,Exotic,offensive,Weapons,20000,,,,10,20,30,50,data.hullmods.MissileReloader,"An autoforge inside the ship periodically reloads the magazines of all missile weapons. 
 Takes between %s and %s seconds to restore %s/%s of max ammo (minimum 1).",Periodically reloads all missile weapons.,graphics/hullmods/missile_autofactory.png,
+Patroller Refit,khs_patroller_refit,2,,Exotic,"special, req_spaceport","Special, Requires Dock",10000,,,,5,10,15,25,data.hullmods.PatrollerRefit,"This refit alters the ship's engines and sensor arrays to focus entirely on speed and power to better ensure that pirates can neither run nor hide.
+Burn Level: %s
+Max Speed: %s
+Maneueverability: %s
+Sensor Strength: %s
+Sensor Profile: %s","Increases burn speed and tactical speed, at the cost of maneueverability. Increases sensor strength at the cost of sensor profile",graphics/hullmods/assault_package.png,
 Realigned Thrusters,khs_realigned_thrusters,1,,Exotic,special,Special,10000,,,,4,8,12,20,data.hullmods.RealignedThrusters,Increases ship maneuverability by %s but reduces max speed by %s.,"Increases maneuverability, reduces speed.",graphics/hullmods/auxilliary_thrusters.png,
 Scaffolding,khs_scaffolding,0,,Exotic,"special, req_spaceport","Special, Requires Dock",1000,TRUE,,,-100,-100,-100,-100,data.hullmods.Scaffolding,"Dramatically increases available space, but the engines don't work while this is installed. For use only while docked.",Increases available OP but renders ship immobile.,graphics/hullmods/automated_repair_unit.png,
-Shield Calibration (Arc),khs_overextended_shields,1,,Exotic,"shields, defensive",Shields,20000,,,,10,20,30,50,data.hullmods.OverextendedShields,"Calibrates your shield emitters to stretch their protective arc to its limits.
+Shield Calibration (Arc),khs_overextended_shields,2,,Exotic,"shields, defensive",Shields,20000,,,,10,20,30,50,data.hullmods.OverextendedShields,"Calibrates your shield emitters to stretch their protective arc to its limits.
 Shield Arc: %s
 Shield Flux/Damage Ratio: %s
 Shield Turn Speed: %s
 Shield Unfold Speed %s",Increases shield arc while decreasing its strength and speed,graphics/hullmods/extended_shields.png,
-Shield Calibration (Reinforcement),khs_reinforced_shields,1,,Exotic,"shields, defensive",Shields,20000,,,,4,8,12,20,data.hullmods.ReinforcedShieldEmitter,"Calibrates your shield emitters to reinforce their resistance to damage.
+Shield Calibration (Reinforcement),khs_reinforced_shields,2,,Exotic,"shields, defensive",Shields,20000,,,,4,8,12,20,data.hullmods.ReinforcedShieldEmitter,"Calibrates your shield emitters to reinforce their resistance to damage.
 Shield Upkeep: %s
 Shield Flux/Damage Ratio: %s",Increases shield flux upkeep but improves flux to damage ratio.,graphics/hullmods/stabilized_shields.png,
-Shield Calibration (Speed),khs_rapid_shield_emitter,1,,Exotic,"defensive, shields",Shields,20000,,,,4,8,12,20,data.hullmods.RapidShieldEmitter,"Calibrates your shield emitters to maximize their speed.
+Shield Calibration (Speed),khs_rapid_shield_emitter,2,,Exotic,"defensive, shields",Shields,20000,,,,4,8,12,20,data.hullmods.RapidShieldEmitter,"Calibrates your shield emitters to maximize their speed.
 Shield Turning Speed: %s
 Shield Unfolding Speed: %s
 Shield Arc: %s",Increases shield turn rate and extension speed.,graphics/hullmods/accelerated_shields.png,
@@ -38,7 +53,7 @@ Silent Engine Assembly,khs_silentengine,2,,Exotic,"engines, defensive, req_space
 The ship's sensor profile is reduced by %s, but its maximum burn level is also reduced by %s.","Makes engines harder to disable, lowers sensor profile, reduces max burn.",graphics/hullmods/insulated_engine_assembly.png,
 Specialized Engines,khs_specialized_engines,2,,Exotic,"special, req_spaceport","Special, Logistics, Requires Dock",20000,,,,4,8,12,20,data.hullmods.SpecializedEngines,Increases maximum burn level by %s. Decreases maneuverability by %s. Halves armor.,Increases maximum burn level at the cost of maneverability and armor.,graphics/hullmods/augmented_drive_field2.png,
 Supercapacitors,khs_supercapacitors,2,,Exotic,offensive,Weapons,10000,,,,5,10,15,25,data.hullmods.Supercapacitors,"Increases energy and beam weapon damage by %s, flux cost by %s, and reduces their rate of fire by %s.",Increases energy and beam weapon damage and flux cost but reduces their rate of fire,graphics/hullmods/shared_flux_sink.png,
-Superior Turret Gyros,khs_superior_turret_gyros,3,,Exotic,defensive,Weapons,20000,,,,4,8,12,20,data.hullmods.SuperiorTurretGyros,Increases the turn rate of all turrets by %s. Reduces armor by %s/%s/%s/%s depending on hull size.,Increases turret turn rate.,graphics/hullmods/advanced_turret_gyros.png,
+Superior Turret Gyros,khs_superior_turret_gyros,2,,Exotic,defensive,Weapons,20000,,,,4,8,12,20,data.hullmods.SuperiorTurretGyros,Increases the turn rate of all turrets by %s. Reduces armor by %s/%s/%s/%s depending on hull size.,Increases turret turn rate.,graphics/hullmods/advanced_turret_gyros.png,
 Tuned Sensors,khs_tuned_sensors,1,,Exotic,"special, req_spaceport","Special, Logistics, Requires Dock",10000,,,,5,5,5,5,data.hullmods.TunedSensors,"A highly tuned sensor grid, its primary benefit is in combat effectiveness, increasing sight range by %s.
 Also increases sensor strength by %s.",Increases combat vision and sensor strength.,graphics/hullmods/high_res_sensors.png,
 Weapon Calibration (Ballistic Damage),khs_ballistic_calibration_damage,2,,Exotic,offensive,Weapons,10000,,,,5,10,15,25,data.hullmods.BallisticCalibrationDamage,"Calibrates all ballistic weapons to focus on damage.

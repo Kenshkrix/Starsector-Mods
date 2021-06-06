@@ -66,6 +66,7 @@ public class FluxNetwork extends BaseHullMod {
 		if (index == 3) return "" + ((Float) mag.get(HullSize.CAPITAL_SHIP)).intValue();
 		if (index == 4) return "" + NUMERATOR;
 		if (index == 5) return "" + DENOMINATOR;
+		if (index == 6) return "" + ((Float) mag.get(hullSize)).intValue();
 		return null;
 	}
 

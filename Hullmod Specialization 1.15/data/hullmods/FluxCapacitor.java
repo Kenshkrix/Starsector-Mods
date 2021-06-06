@@ -39,6 +39,8 @@ public class FluxCapacitor extends BaseHullMod {
 		if (index == 5) return "" + ((Float) mag2.get(HullSize.DESTROYER)).intValue();
 		if (index == 6) return "" + ((Float) mag2.get(HullSize.CRUISER)).intValue();
 		if (index == 7) return "" + ((Float) mag2.get(HullSize.CAPITAL_SHIP)).intValue();
+		if (index == 8) return "" + ((Float) mag1.get(hullSize)).intValue();
+		if (index == 9) return "" + ((Float) mag2.get(hullSize)).intValue();
 		return null;
 	}
 

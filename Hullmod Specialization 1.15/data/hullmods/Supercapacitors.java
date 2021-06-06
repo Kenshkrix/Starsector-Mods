@@ -29,7 +29,7 @@ public class Supercapacitors extends BaseHullMod {
     public String getDescriptionParam(int index, HullSize hullSize) {
         if (index == 0) return "" + (int) ENERGY_DAMAGE_MOD + "%";
         if (index == 1) return "" + (int) ENERGY_FLUX_MOD + "%";
-        if (index == 3) return "" + (int) ENERGY_ROF_MOD + "%";
+        if (index == 2) return "" + (int) ENERGY_ROF_MOD + "%";
         return null;
     }
 }

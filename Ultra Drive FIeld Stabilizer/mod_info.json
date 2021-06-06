@@ -3,7 +3,7 @@
 	"name":"Ultra Drive Field Stabilizer",
     "utility": "true",
 	"author":"Kenshkrix",
-	"version":"1.0",
+	"version":"1.01",
 	"description":"Adds a super OP drive field stabilizer",
-    "gameVersion":"0.9.1a"
+    "gameVersion":"0.95a-RC15"
 }

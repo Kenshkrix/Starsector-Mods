@@ -42,14 +42,7 @@ public class ExoticArmor extends BaseHullMod {
 		if (index == 3) return "" + ((Float) mag.get(HullSize.CAPITAL_SHIP)).intValue();
 		if (index == 4) return "" + (int) HULL_MOD + "%";
 		if (index == 5) return "" + (int) MANEUVER_MOD + "%";
+		if (index == 6) return "" + ((Float) mag.get(hullSize)).intValue();
 		return null;
-		//if (index == 0) return "" + ((Float) mag.get(hullSize)).intValue();
-		//return null;
-	}
-
-	public boolean isApplicableToShip(ShipAPI ship) {
-		//if (ship.getMutableStats().getCargoMod().computeEffective(ship.getHullSpec().getCargo()) < 70) return false;
-
-		return true;
 	}
 }
