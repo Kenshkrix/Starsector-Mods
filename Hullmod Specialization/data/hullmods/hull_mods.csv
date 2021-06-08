@@ -37,6 +37,7 @@ Sensor Strength: %s
 Sensor Profile: %s","Increases burn speed and tactical speed, at the cost of maneueverability. Increases sensor strength at the cost of sensor profile",graphics/hullmods/assault_package.png,
 Realigned Thrusters,khs_realigned_thrusters,1,,Exotic,special,Special,10000,TRUE,,,4,8,12,20,data.hullmods.RealignedThrusters,Increases ship maneuverability by %s but reduces max speed by %s.,"Increases maneuverability, reduces speed.",graphics/hullmods/auxilliary_thrusters.png,
 Scaffolding,khs_scaffolding,0,,Exotic,"special, req_spaceport","Special, Requires Dock",1000,TRUE,,,-100,-100,-100,-100,data.hullmods.Scaffolding,"Dramatically increases available space, but the engines don't work while this is installed. For use only while docked.",Increases available OP but renders ship immobile.,graphics/hullmods/automated_repair_unit.png,
+Scaffolding (Invisible),khs_scaffolding_invisible,0,,Exotic,"special, req_spaceport","Special, Requires Dock",1000,,,TRUE,0,0,0,0,data.hullmods.ScaffoldingInvisible,This should be invisible.,This should be invisible.,graphics/hullmods/automated_repair_unit.png,
 Shield Calibration (Arc),khs_overextended_shields,2,,Exotic,"shields, defensive",Shields,20000,TRUE,,,10,20,30,50,data.hullmods.OverextendedShields,"Calibrates your shield emitters to stretch their protective arc to its limits.
 Shield Arc: %s
 Shield Flux/Damage Ratio: %s
