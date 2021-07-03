@@ -49,9 +49,14 @@ public class EldritchFluxCoil extends BaseHullMod {
 		
 		if (Global.getSector().getClock().getElapsedDaysSince(lastDay) >= DAYS_PER_SACRIFICE){
 			lastDay = currentDay;
+			if (member.getFleetData() == null) 
+				return;
+			if (member.getFleetData().getFleet() == null) 
+				return;
+			if (member.getFleetData().getFleet().getCargo() == null) 
+				return;
 			
 			member.getFleetData().getFleet().getCargo().removeCrew(SACRIFICES_REQUIRED);
-			
 		}
 	}
 	
