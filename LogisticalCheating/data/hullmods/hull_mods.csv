@@ -1,0 +1,9 @@
+name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sprite,Column 20
+Cheat Efficiency,efficiency_cheat,0,,,special,Special,10000,TRUE,,,0,0,0,0,data.hullmods.EfficiencyCheat,"Reduces supply use for maintenance, fuel use, and minimum crew required by %s.
+
+Increases the combat readiness recovery and repair rates by %s. The per-day supply consumption for CR recovery is increased to account for the increased recovery rate, but the total supply cost remains the same.",Reduces ongoing costs and enables more deployments.,graphics/hullmods/efficiency.png,
+Cheat Cargo Holds,magic_cargo_holds,0,,,special,Special,10000,TRUE,,,0,0,0,0,data.hullmods.MagicCargoHolds,Increases cargo capacity by %s.,Increases cargo capacity.,graphics/hullmods/efficiency.png,
+Cheat Fuel Tanks,magic_fuel_tanks,0,,,special,Special,10000,TRUE,,,0,0,0,0,data.hullmods.MagicFuelTanks,Increases fuel capacity by %s.,Increases fuel capacity.,graphics/hullmods/efficiency.png,
+Cheat Berthing,extradimensional_berthing,0,,,special,Special,10000,TRUE,,,0,0,0,0,data.hullmods.ExtradimensionalBerthing,Increases crew capacity by %s.,Increases crew capacity.,graphics/hullmods/efficiency.png,
+Ultra Engines,ultra_engines,0,,,special,Special,10000,TRUE,,,0,0,0,0,data.hullmods.UltraEngines,Increase burn by %s and maneuverability by %s.,Increases max burn and maneuverability.,graphics/hullmods/augmented_drive_field2.png,
+Ultra Sensors,ultra_sensors,0,,,special,Special,10000,TRUE,,,0,0,0,0,data.hullmods.UltraSensors,Increases combat vision by %s and sensor strength by %s.,Increases combat vision and sensor strength.,graphics/hullmods/high_res_sensors.png,

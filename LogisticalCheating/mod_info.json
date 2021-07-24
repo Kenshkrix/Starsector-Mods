@@ -1,0 +1,9 @@
+{
+	"id":"logistical_cheating",
+	"name":"Logistical Cheating",
+    "utility": "true",
+	"author":"Kenshkrix",
+	"version":"1.0",
+	"description":"Adds super OP logistics cheat hullmods.",
+    "gameVersion":"0.95a-RC12"
+}
