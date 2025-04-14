@@ -1,0 +1,10 @@
+{
+	"id":"k_secondary_shields",
+	"name":"Secondary Shields",
+    "utility": "true",
+	"author":"Kenshkrix",
+	"version":"0.1",
+	"description":"Adds a set of hullmods which provide secondary shield generators",
+    "gameVersion":"0.98a-RC7",
+	"jars":["jars/SecondaryShields.jar"]
+}

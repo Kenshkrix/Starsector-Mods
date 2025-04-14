@@ -1,0 +1,52 @@
+name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sModDesc,sprite
+SShield Bubble,sshield_bubble,3,,SShields,"req_spaceport, defensive, shields, special","Special, Shields, Logistics, Requires Dock",10000,TRUE,,,15,15,15,15,data.hullmods.SecondaryShieldBubble,"Adds a secondary shield generator that forms a complete bubble around the ship.
+Flux Capacity: %s
+Flux Dissipation: %s
+Shield Absorption: %s
+Hard Flux Dissipation: %s
+Shield Arc: %s
+Shield Radius: %s",Adds secondary shields,,graphics/hullmods/secondary_shields_bubble.png
+SShield Bubble (Huge),sshield_bubble_huge,3,,SShields,"req_spaceport, defensive, shields, special","Special, Shields, Logistics, Requires Dock",10000,TRUE,,,25,25,25,25,data.hullmods.SecondaryShieldBubbleHuge,"Adds a secondary shield generator that forms a huge bubble around the ship.
+Flux Capacity: %s
+Flux Dissipation: %s
+Shield Absorption: %s
+Hard Flux Dissipation: %s
+Shield Arc: %s
+Shield Radius: %s",Adds secondary shields,,graphics/hullmods/secondary_shields_bubble_huge.png
+SShield Segmented (36),sshield_segmented_36,3,,SShields,"req_spaceport, defensive, shields, special","Special, Shields, Logistics, Requires Dock",10000,TRUE,,,35,35,35,35,data.hullmods.SecondaryShieldThirtySix,"Adds a huge number of small shield generators around the ship which rotate slowly.
+Segments: %s
+Flux Capacity: %s
+Flux Dissipation: %s
+Shield Absorption: %s
+Hard Flux Dissipation: %s
+Shield Radius: %s
+Rotation Speed: %s",Adds secondary shields,,graphics/hullmods/secondary_shields_thirtysix.png
+SShield Segmented (4),sshield_segmented_4,3,,SShields,"req_spaceport, defensive, shields, special","Special, Shields, Logistics, Requires Dock",10000,TRUE,,,20,20,20,20,data.hullmods.SecondaryShieldFour,"Adds four shield generators around the ship which rotate slowly.
+Segments: %s
+Flux Capacity: %s
+Flux Dissipation: %s
+Shield Absorption: %s
+Hard Flux Dissipation: %s
+Shield Radius: %s
+Rotation Speed: %s",Adds secondary shields,,graphics/hullmods/secondary_shields_four.png
+SShield Segmented (8),sshield_segmented_8,3,,SShields,"req_spaceport, defensive, shields, special","Special, Shields, Logistics, Requires Dock",10000,TRUE,,,20,20,20,20,data.hullmods.SecondaryShieldEight,"Adds eight shield generators around the ship which rotate slowly.
+Segments: %s
+Flux Capacity: %s
+Flux Dissipation: %s
+Shield Absorption: %s
+Hard Flux Dissipation: %s
+Shield Radius: %s
+Rotation Speed: %s",Adds secondary shields,,graphics/hullmods/secondary_shields_eight.png
+SShield Trishield,sshield_trishield,3,,SShields,"req_spaceport, defensive, shields, special","Special, Shields, Logistics, Requires Dock",10000,TRUE,,,20,20,20,20,data.hullmods.SecondaryShieldThree,"Adds a triple shield generator to the ship which rotates slowly.
+Flux Capacity: %s
+Flux Dissipation: %s
+Shield Absorption: %s
+Hard Flux Dissipation: %s
+Shield Radius: %s",Adds secondary shields,,graphics/hullmods/secondary_shields_trishield.png
+SShield Trishield (Reversed),sshield_trishield_reversed,3,,SShields,"req_spaceport, defensive, shields, special","Special, Shields, Logistics, Requires Dock",10000,TRUE,,,20,20,20,20,data.hullmods.SecondaryShieldThreeReversed,"Adds a triple shield generator to the ship which rotates slowly.
+This one rotates in the reverse direction
+Flux Capacity: %s
+Flux Dissipation: %s
+Shield Absorption: %s
+Hard Flux Dissipation: %s
+Shield Radius: %s",Adds secondary shields,,graphics/hullmods/secondary_shields_trishield_ccw.png

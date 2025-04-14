@@ -1,0 +1,17 @@
+{
+  "hullName": "Shield Bubble",
+  "hullId": "shieldbubble",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/ships/none.png",
+  "style": "HIGH_TECH",
+  "height": 21,
+  "width": 18,
+  "center": [9, 11],
+  "collisionRadius": 74.5,
+  "shieldCenter": [1, 0],
+  "shieldRadius": 86,
+  "viewOffset": 0,
+  "weaponSlots": [],
+  "engineSlots": [],
+  "bounds": [  ]
+}
