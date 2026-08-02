@@ -1,0 +1,9 @@
+fieldID,fieldName,fieldType,defaultValue,secondaryValue,fieldDescription,minValue,maxValue,tab
+sssrm_omegaHeader,Omega integration,Header,,,,,,
+sssrm_omegaRefitEnabled,Fit the Cascade Resonator to Omega ships,Boolean,true,,"When on, Omega ships with a free large missile-capable mount may spawn carrying the Cascade Resonator MRM. Among Omega hulls only the Tesseract has one, so Facets and Shards are never affected. Turn off to leave Omega fleets entirely vanilla.",,,
+sssrm_omegaRefitChance,Chance per ship,Double,0.35,,"Rolled independently for every ship in a spawning Omega fleet. Only ships with a suitable large mount are eligible, so the effective rate across a mixed fleet is much lower than this number.",0,1,
+sssrm_omegaTesseractCount,Omega Tesseracts per fleet,Int,2,,"How many Tesseracts an Omega fleet fields. 2 is the vanilla hypershunt guardian count. Only applies to fleets that already contain at least one Tesseract, so escort and patrol groups are unaffected. Added ships get their own Omega core and full combat readiness. Takes effect on newly generated fleets.",1,10,
+sssrm_swarmHeader,Swarm targeting,Header,,,,,,
+sssrm_overkillBuffer,Overkill buffer,Double,0.2,,"Headroom over the estimated number of missiles needed to kill a target, before that target stops drawing more from the swarm. The estimate is deliberately approximate, so allocating exactly the predicted number leaves targets alive whenever it reads slightly low. 0.2 means 20 percent more than predicted. Requires ECCM on the launching ship.",0,1,
+sssrm_perfHeader,Performance,Header,,,,,,
+sssrm_retargetIntervalMult,Swarm retarget interval,Double,1,,"Scales how often swarms re-solve their targeting. 1 is the tuned default. Higher values mean less frequent solving and better performance with very large swarms, at the cost of slower reaction to targets dying. Applies from the next battle.",0.25,4,

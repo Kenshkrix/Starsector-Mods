@@ -1,0 +1,6 @@
+{
+	# The game instantiates one of these per battle and calls init(engine) on it.
+	"plugins":{
+		"SSSRM_swarmCoordinator":"kenshkrix.sssrm.SwarmCoordinator",
+	},
+}

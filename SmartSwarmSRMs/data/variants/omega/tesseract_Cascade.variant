@@ -1,0 +1,66 @@
+{
+    # Modelled on vanilla tesseract_Strike, with the Cascade Resonator in WS 009 -- the
+    # Tesseract's only LARGE mount, and the only large slot on any Omega hull. Everything
+    # else is Strike's loadout untouched, so this comes in 4 OP UNDER a variant the game
+    # already ships (sssrm_resonance is 26 OP where rifttorpedo was 30).
+    #
+    # This is a NEW variant rather than an edit of tesseract_Strike, so it does not overwrite
+    # vanilla content or collide with other mods. omega.faction knows weapons by tag and
+    # sssrm_resonance already carries "omega", so the faction recognises it.
+    #
+    # Not fitted with ECCM: it costs 20 OP on a capital and the pooling it unlocks only pays
+    # off across multiple ECCM ships firing the same submunition. A lone Tesseract would get
+    # the faster retarget and overkill-awareness but not the pooling.
+    "displayName": "Cascade",
+    "fluxCapacitors": 0,
+    "fluxVents": 28,
+    "goalVariant": true,
+    "hullId": "tesseract",
+    "hullMods": ["missleracks"],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "tesseract_Cascade",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS 009": "sssrm_resonance"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS 007": "resonatormrm",
+                "WS 010": "resonatormrm"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS 008": "cryoblaster"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 000": "minipulser",
+                "WS 005": "minipulser"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 001": "shockrepeater",
+                "WS 002": "shockrepeater",
+                "WS 003": "shockrepeater",
+                "WS 004": "shockrepeater"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS 006": "riftbeam"}
+        }
+    ]
+}

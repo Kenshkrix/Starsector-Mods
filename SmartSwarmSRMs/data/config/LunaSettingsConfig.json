@@ -1,0 +1,7 @@
+{
+	# Registers this mod's tab in LunaLib's settings menu. Keyed by the mod id from
+	# mod_info.json. LunaLib is optional -- without it the mod runs on the defaults in
+	# LunaSettings.csv and nothing here is read.
+	"SSSRM": {
+	}
+}

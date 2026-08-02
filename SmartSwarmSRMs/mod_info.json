@@ -1,0 +1,16 @@
+{
+	"id":"SSSRM",
+	"name":"Smart Swarm SRMs",
+	"author":"Kenshkrix",
+	"utility":"false",
+	"version":{"major":"0", "minor":"1", "patch":"0"},
+	"description":"Adds a series of short range missiles that deploy swarms of smart submunitions designed to equally spread out amongst all valid targets within range. Also includes an Omega weapon and LunaLib config for modifying the Tesseract count for Hypershunt defenses (so that the Omega weapon can be acquired).",
+	"gameVersion":"0.98a-RC8",
+
+	"dependencies":[
+		{"id":"lw_lazylib", "name":"LazyLib"}
+	],
+
+	"jars":["jars/SmartSwarmSRMs.jar"],
+	"modPlugin":"kenshkrix.sssrm.SSSRMModPlugin"
+}

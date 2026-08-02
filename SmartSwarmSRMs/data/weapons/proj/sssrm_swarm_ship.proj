@@ -1,0 +1,63 @@
+{
+	# NOTE: this id is also the profile key in data/config/sssrm_swarms.json.
+	"id":"sssrm_swarm_ship",
+	"specClass":"missile",
+
+	# Plain guided MISSILE with no behaviorSpec -- that's what lets
+	# SSSRMModPlugin.pickMissileAI() swap in SwarmMissileAI. Adding a "behavior"
+	# block here would fight the coordinator for control.
+	"missileType":"MISSILE",
+
+	# Placeholder art -- vanilla MIRV warhead.
+	"sprite":"graphics/missiles/missile_MIRV_warhead.png",
+	"size":[7,16],
+	"center":[3.5,8],
+	# Keep this in sync with sssrm_swarm_pd.proj -- the launchers are meant to differ by
+	# targeting priority, not by how the submunitions fly.
+	# collisionRadius is the single most important number here: too small and a fast
+	# submunition steps straight over a fighter between frames. Vanilla's Swarmer uses 12
+	# at 300 speed; this is faster, so it needs more.
+	"collisionRadius":14,
+	"collisionClass":"MISSILE_NO_FF",
+	"explosionColor":[120,180,255,255],
+	"explosionRadius":50,
+	"maxFlightTime":7,
+	"fadeTime":0.5,
+	# 355 is deliberate, and the 5 matters -- do not round it to 350 or 360.
+	#
+	# Surveying all 350 fighter hulls across the installed mod set, speeds cluster hard on
+	# round numbers: 41 hulls at 200, 36 at 150, 32 at 300, 15 at exactly 350. This sits
+	# 5/s above that 350 cluster, so a stern chase gains only ~35 units over a submunition's
+	# 7s life against a ~24 unit combined hit radius. The swarm visibly closes on them and
+	# often still fails to connect, which is the intent -- not a rounding error.
+	#
+	# 350 flat would make that cluster uncatchable; 360+ would make it routine.
+	# The genuinely fast outliers (Thunder 450, Glister 480, sotf_volitionswarm 600) are
+	# meant to escape.
+	"engineSpec":{"maxSpeed":355,
+				  "turnAcc":6000,
+				  "turnRate":720,
+				  "acc":3000,
+				  "dec":0},
+	"engineSlots":[{"id":"ES1",
+					"loc":[-7, 0],
+					"style":"CUSTOM",
+					"styleSpec":{
+						"mode":"QUAD_STRIP",
+						"engineColor":[120,180,255,255],
+						"contrailDuration":0.5,
+						"contrailWidthMult":2,
+						"contrailWidthAddedFractionAtEnd":2,
+						"contrailMinSeg":5,
+						"contrailMaxSpeedMult":.0f,
+						"contrailAngularVelocityMult":0.5f,
+						"contrailSpawnDistMult":.5,
+						"contrailColor":[100,100,100,150],
+						"glowSizeMult":4,
+						"glowAlternateColor":[120,180,255,155],
+						"type":"SMOKE"
+					},
+					"width":4.0,
+					"length":20.0,
+					"angle":180.0}]
+}

@@ -1,0 +1,105 @@
+{
+	# Keyed by the SUBMUNITION's projectile spec id (the "id" in its .proj file),
+	# not the launcher's weapon id.
+	#
+	#   priority          Ordered high-to-low. Anything not listed is never targeted.
+	#                     Valid: CAPITAL, CRUISER, DESTROYER, FRIGATE, FIGHTER, MISSILE
+	#   rangeMult         The scan radius is derived at runtime from how far the swarm can
+	#                     actually still fly (max speed x remaining flight time), then
+	#                     scaled by this. So it tracks missile speed/endurance hullmods and
+	#                     skills automatically. Below 1.0 leaves a margin for targets that
+	#                     run; above 1.0 lets missiles chase things they may not reach.
+	#   maxSearchRange    Hard ceiling on that radius. Safety net, not the main control.
+	#   retargetInterval  Seconds between assignment passes. Lower = more responsive,
+	#                     more CPU. 0.2 is fine for swarms up to a few hundred.
+	#   eccmRetargetMult  Scales retargetInterval for swarms launched from ECCM ships.
+	#                     0.5 = they re-solve twice as often as everyone else.
+	#   guidanceOnly      Steer the missile without taking over its AI. Required for anything
+	#                     with a behaviorSpec of its own (a MIRV stage), because replacing the
+	#                     AI of a MIRV also removes its split. Default false.
+	#
+	# ECCM (vanilla "eccm" hullmod) upgrades a swarm in three ways, all automatic:
+	#   - swarms from every ECCM ship on a side pool into one allocation
+	#   - each missile is checked individually against what it can still reach
+	#   - targets are only assigned as many missiles as it should take to kill them
+
+	# Anti-ship: works up the hull sizes, and will clean up fighters if nothing else is left.
+	"sssrm_swarm_ship":{
+		"priority":["FRIGATE", "DESTROYER", "CRUISER", "CAPITAL", "FIGHTER"],
+		"rangeMult":0.9,
+		"maxSearchRange":3000,
+		"retargetInterval":0.2,
+	},
+
+	# Anti-fighter: strips escorts before anything else, falls back to light hulls.
+	"sssrm_swarm_pd":{
+		"priority":["FIGHTER", "MISSILE", "FRIGATE", "DESTROYER"],
+		# Tighter margin -- fighters run, so don't commit to ones at the edge of reach.
+		"rangeMult":0.8,
+		"maxSearchRange":3000,
+		"retargetInterval":0.2,
+	},
+
+	# --- Cascade Resonator (Omega) -------------------------------------------------------
+	# Every generation is steered, stages included. The coordinator groups each generation
+	# separately, so its even split is what fans the tree out: 2 stages divide 2 targets,
+	# their 4 children divide 4, and by the terminal 16 motes cover up to 16. Divergence is
+	# an allocation result, not an arc-spread accident.
+	#
+	# The stages MUST be guidanceOnly. A plain profile replaces a MIRV's AI, and that also
+	# removes its split -- the missile flies smart and never cascades. guidanceOnly keeps the
+	# stock AI and only pushes a target into it. AdoptedMissile additionally never pushes a
+	# null target, because the coordinator clears targets constantly and a stock MIRV AI is
+	# not built to receive that mid-flight.
+	#
+	# (For the record: stage guidance was blamed for the combat crashes during debugging and
+	# was innocent. The cause was a missing smokeSpec in the stage behaviorSpecs.)
+	#
+	# rangeMult is generous because a stage should steer toward what its DESCENDANTS will
+	# reach, not just what it can personally hit in its own 4s life.
+	"sssrm_resonance_s1":{
+		"guidanceOnly":true,
+		"priority":["CAPITAL", "CRUISER", "DESTROYER", "FRIGATE", "FIGHTER", "MISSILE"],
+		"rangeMult":2.0,
+		"maxSearchRange":6000,
+		"retargetInterval":0.1,
+	},
+	"sssrm_resonance_s2":{
+		"guidanceOnly":true,
+		"priority":["CAPITAL", "CRUISER", "DESTROYER", "FRIGATE", "FIGHTER", "MISSILE"],
+		"rangeMult":2.0,
+		"maxSearchRange":6000,
+		"retargetInterval":0.1,
+	},
+	"sssrm_resonance_s3":{
+		"guidanceOnly":true,
+		"priority":["CAPITAL", "CRUISER", "DESTROYER", "FRIGATE", "FIGHTER", "MISSILE"],
+		"rangeMult":2.0,
+		"maxSearchRange":6000,
+		"retargetInterval":0.1,
+	},
+	"sssrm_resonance_s4":{
+		"guidanceOnly":true,
+		"priority":["CAPITAL", "CRUISER", "DESTROYER", "FRIGATE", "FIGHTER", "MISSILE"],
+		"rangeMult":2.0,
+		"maxSearchRange":6000,
+		"retargetInterval":0.1,
+	},
+
+	# Terminal generation -- 16 motes already spread across the field, engaging everything
+	# biggest-first. Not guidanceOnly: it has no behaviorSpec, so we own its AI outright.
+	"sssrm_resonance_mote":{
+		"priority":["CAPITAL", "CRUISER", "DESTROYER", "FRIGATE", "FIGHTER", "MISSILE"],
+		"rangeMult":1.0,
+		"maxSearchRange":4000,
+		"retargetInterval":0.2,
+	},
+
+	# Indiscriminate: everything in range is a threat, biggest first.
+	"sssrm_swarm_all":{
+		"priority":["CAPITAL", "CRUISER", "DESTROYER", "FRIGATE", "FIGHTER", "MISSILE"],
+		"rangeMult":1.0,
+		"maxSearchRange":3000,
+		"retargetInterval":0.25,
+	},
+}

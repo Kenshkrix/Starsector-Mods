@@ -1,0 +1,45 @@
+{
+	# NOTE: this id is also the profile key in data/config/sssrm_swarms.json.
+	"id":"sssrm_swarm_pd",
+	"specClass":"missile",
+	"missileType":"MISSILE",
+
+	# Placeholder art -- vanilla MIRV warhead.
+	"sprite":"graphics/missiles/missile_MIRV_warhead.png",
+	"size":[7,16],
+	"center":[3.5,8],
+	# Identical flight profile to sssrm_swarm_ship.proj by design -- see the note there.
+	"collisionRadius":14,
+	"collisionClass":"MISSILE_NO_FF",
+	"explosionColor":[255,200,120,255],
+	"explosionRadius":50,
+	"maxFlightTime":7,
+	"fadeTime":0.5,
+	# See the note in sssrm_swarm_ship.proj -- 355 is intentional, including the 5.
+	"engineSpec":{"maxSpeed":355,
+				  "turnAcc":6000,
+				  "turnRate":720,
+				  "acc":3000,
+				  "dec":0},
+	"engineSlots":[{"id":"ES1",
+					"loc":[-7, 0],
+					"style":"CUSTOM",
+					"styleSpec":{
+						"mode":"QUAD_STRIP",
+						"engineColor":[255,200,120,255],
+						"contrailDuration":0.5,
+						"contrailWidthMult":2,
+						"contrailWidthAddedFractionAtEnd":2,
+						"contrailMinSeg":5,
+						"contrailMaxSpeedMult":.0f,
+						"contrailAngularVelocityMult":0.5f,
+						"contrailSpawnDistMult":.5,
+						"contrailColor":[100,100,100,150],
+						"glowSizeMult":4,
+						"glowAlternateColor":[255,200,120,155],
+						"type":"SMOKE"
+					},
+					"width":4.0,
+					"length":20.0,
+					"angle":180.0}]
+}

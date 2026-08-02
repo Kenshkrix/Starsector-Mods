@@ -1,0 +1,89 @@
+{
+	"id":"sssrm_screen_carrier_s",
+	"specClass":"missile",
+	"missileType":"MIRV",
+
+	# Vanilla handles the split. "projectileSpec" is the submunition, and its id doubles as
+	# the profile key in data/config/sssrm_swarms.json -- all three sizes deliberately share
+	# one submunition, so a ship carrying several sizes pools them into a single swarm.
+	"behaviorSpec":{"behavior":"MIRV",
+					"splitRange":800,
+					"splitRangeRange":50,
+					"etaModifier":-2,
+					"minTimeToSplit":0.5,
+					"canSplitEarly":false,
+					"splitSound":"hydra_split",
+					# THIS is the submunition's damage, not the weapon_data.csv row -- for a
+					# MIRV the CSV damage/shot only feeds the tooltip. Vanilla sabot_srm.proj
+					# says as much ("needs to match highlight in weapon_data.csv"). Setting
+					# these to 0 makes every submunition harmless no matter what the CSV says.
+					# Keep them in sync with the CSV or the tooltip will lie.
+					"hitpoints":100,
+					"numShots":10,
+					"damage":45,
+					"impact":10,
+					"emp":40,
+					"damageType":HIGH_EXPLOSIVE,
+					# Full ring. A forward fan was tried to stop half the swarm launching
+					# backwards, but at turnAcc 6000 a 180 deg reversal costs ~0.37s of a
+					# 7s life -- the agility fix had already solved that. Meanwhile a fan
+					# packs the large tier's 40 submunitions 4 deg apart and they launch as
+					# one solid stack. 360 gives them 9 deg and a proper bloom.
+					"arc":360,
+					"arcOffset":0,
+					"evenSpread":true,
+					"spreadSpeed":100,
+					"spreadSpeedRange":40,
+					"projectileSpec":"sssrm_swarm_pd",
+					# DO NOT REMOVE smokeSpec. It is not cosmetic. A MIRV behaviorSpec without
+					# it leaves the spawned missile half-constructed, and vanilla BasicShipAI
+					# later dies with:
+					#   NullPointerException: cannot invoke DamageType.getArmorMult()
+					#   because com.fs.starfarer.combat.E.F.getType() is null
+					# The stack is pure engine code and points nowhere near the real cause.
+					# Removing this line cost most of a debugging session to track down.
+					"smokeSpec":{"particleSizeMin":30.0,
+								 "particleSizeRange":30.0,
+								 "cloudParticleCount":0,
+								 "cloudDuration":1.0,
+								 "cloudRadius":20.0,
+								 "blowbackParticleCount":0,
+								 "blowbackDuration":0,
+								 "blowbackLength":0,
+								 "blowbackSpread":0,
+								 "particleColor":[255,200,120,200]}
+					},
+
+	# Placeholder art -- vanilla MIRV body, scaled per size.
+	"sprite":"graphics/missiles/missile_MIRV.png",
+	"size":[10,25],
+	"center":[5,12.5],
+	"collisionRadius":12,
+	"collisionClass":"MISSILE_NO_FF",
+	"explosionColor":[255,200,120,255],
+	"explosionRadius":96,
+	"engineSpec":{"turnAcc":500,
+				  "turnRate":120,
+				  "acc":400,
+				  "dec":300},
+	"engineSlots":[{"id":"ES1",
+					"loc":[-11, 0],
+					"style":"CUSTOM",
+					"styleSpec":{
+						"mode":"QUAD_STRIP",
+						"engineColor":[255,200,120,255],
+						"contrailDuration":1,
+						"contrailWidthMult":1,
+						"contrailWidthAddedFractionAtEnd":2.5,
+						"contrailMinSeg":5,
+						"contrailMaxSpeedMult":0.5f,
+						"contrailAngularVelocityMult":0.5f,
+						"contrailColor":[255,200,120,75],
+						"glowSizeMult":1.5,
+						"type":"GLOW"
+					},
+					"width":6.0,
+					"length":35.0,
+					"angle":180.0},
+					]
+}

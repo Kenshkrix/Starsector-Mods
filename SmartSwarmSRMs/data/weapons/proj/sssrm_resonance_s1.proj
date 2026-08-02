@@ -1,0 +1,108 @@
+{
+	"id":"sssrm_resonance_s1",
+	"specClass":"missile",
+	"missileType":"MIRV",
+
+	# Cascade stage 1 of 4. Splits into 2x "sssrm_resonance_s2".
+	# Stages are deliberately NOT registered in sssrm_swarms.json. Two things go wrong if
+	# they are: a plain profile replaces the MIRV AI and the missile stops splitting, and a
+	# "guidanceOnly" profile (which pushes targets into the stock AI instead) coincided with
+	# hard combat crashes. Only the terminal mote is steered. Stages fly stock MIRV guidance
+	# and diverge via arc/spreadSpeed below.
+	# Nested MIRV -- a MIRV whose projectileSpec is itself a MIRV -- is not something vanilla
+	# does, but five mods ship it (A_S-F, DME's Breaker LRM, Sylphon) at depth 2. This chain
+	# runs deeper and does so fine; depth was never the problem.
+	"behaviorSpec":{"behavior":"MIRV",
+					# splitRange is distance to TARGET, not distance travelled. Parking it
+					# far above vanilla's 400..1000 means it is effectively always satisfied,
+					# so minTimeToSplit becomes the real trigger and the cascade is
+					# range-independent. Confirmed working at 10000 with canSplitEarly true.
+					"splitRange":10000,
+					"splitRangeRange":50,
+					"minTimeToSplit":0.4,
+					"canSplitEarly":true,
+					"etaModifier":-2,
+					"splitSound":"hydra_split",
+					"hitpoints":260,
+					"numShots":2,
+					# Child per-hit damage: 2400 x 0.55^1 = 1320.
+					# 2 x 0.55 = 1.10, so output grows each generation.
+					"damage":1320,
+					"impact":10,
+					"emp":0,
+					"damageType":ENERGY,
+					"arc":150,
+					"arcOffset":0,
+					"evenSpread":true,
+					"spreadSpeed":170,
+					"spreadSpeedRange":40,
+					"projectileSpec":"sssrm_resonance_s2",
+					# DO NOT REMOVE smokeSpec. It is not cosmetic. A MIRV behaviorSpec without
+					# it leaves the spawned missile half-constructed, and vanilla BasicShipAI
+					# later dies with:
+					#   NullPointerException: cannot invoke DamageType.getArmorMult()
+					#   because com.fs.starfarer.combat.E.F.getType() is null
+					# The stack is pure engine code and points nowhere near the real cause.
+					# Removing this line cost most of a debugging session to track down.
+					"smokeSpec":{"particleSizeMin":30.0,
+								 "particleSizeRange":30.0,
+								 "cloudParticleCount":0,
+								 "cloudDuration":0.01,
+								 "cloudRadius":20.0,
+								 "blowbackParticleCount":0,
+								 "blowbackDuration":0,
+								 "blowbackLength":0,
+								 "blowbackSpread":0,
+								 "particleColor":[25,255,215,200]}
+					},
+
+	"sprite":"graphics/missiles/resonator_mrm.png",
+	"size":[9.0,22.0],
+	"center":[4.5,9.0],
+	"collisionRadius":14,
+	"collisionClass":"MISSILE_NO_FF",
+	"explosionColor":[25,255,215,255],
+	"explosionRadius":100,
+	"glowColor":[25,255,215,75],
+	"glowRadius":50,
+	# reduceDamageWhileFading is deliberately absent -- same null-DamageType crash risk as on
+	# the mote. A stage splits at 0.8s and only lives 1.4s, so it normally never fades, but
+	# one that fails to split would.
+	"useHitGlowWhenDestroyed":true,
+	# A MIRV parent counts as destroyed the moment it splits, so it throws the same debris
+	# any dying missile does -- stray shrapnel hanging at every split point. These two
+	# suppress that. Both were pulled during crash bisection and re-added afterwards with the
+	# crash gone, so they are confirmed innocent -- the cause was elsewhere.
+	"noDebrisWhenDestroyed":true,
+	"destroyedExplosionColor":[25,255,215,255],
+	# Must stay false or the chain dies at the launcher's stated range instead of cascading.
+	"fizzleOnReachingWeaponRange":false,
+	"maxFlightTime":4.0,
+	"fadeTime":0.5,
+	"engineSpec":{"maxSpeed":700,
+				  "turnAcc":2500,
+				  "turnRate":400,
+				  "acc":3000,
+				  "dec":600},
+	"engineSlots":[{"id":"ES1",
+					"loc":[0, 0],
+					"style":"CUSTOM",
+					"styleSpec":{
+						"mode":"QUAD_STRIP",
+						"engineColor":[0,0,0,0],
+						"glowSizeMult":1.5,
+						"glowAlternateColor":[25,255,215,75],
+						"contrailDuration":2,
+						"contrailWidthMult":1,
+						"contrailWidthAddedFractionAtEnd":2,
+						"contrailMinSeg":5,
+						"contrailMaxSpeedMult":.0f,
+						"contrailAngularVelocityMult":0.5f,
+						"contrailSpawnDistMult":.5,
+						"contrailColor":[25,255,215,35],
+						"type":"GLOW"
+					},
+					"width":8.0,
+					"length":20.0,
+					"angle":180.0}]
+}

@@ -1,0 +1,23 @@
+{
+	# Fits a weapon to ships of a faction as their fleets spawn.
+	#
+	# This exists because Omega fleets do not pick up mod-added goal variants -- shipping
+	# data/variants/omega/tesseract_Cascade.variant was not enough to make it appear in play.
+	# Refitting at spawn time works regardless of which variant the game chose, and overwrites
+	# nothing: the variant is cloned per ship before editing, so vanilla stock variants are
+	# never mutated.
+	#
+	#   enabled        Turn the whole thing off without removing the mod.
+	#   weaponId       What to fit. Must be large and missile-mountable.
+	#   factionId      Whose fleets to touch.
+	#   chancePerShip  Rolled independently for every ship in a spawning fleet. Only ships
+	#                  with a free-standing LARGE slot that accepts missiles are eligible, so
+	#                  among Omega hulls that is the Tesseract only -- Facet and both Shards
+	#                  have nothing above medium. The effective rate is therefore much lower
+	#                  than this number across a mixed fleet.
+
+	"enabled":true,
+	"weaponId":"sssrm_resonance",
+	"factionId":"omega",
+	"chancePerShip":0.35,
+}

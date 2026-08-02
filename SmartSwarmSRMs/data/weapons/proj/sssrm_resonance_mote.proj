@@ -1,0 +1,58 @@
+{
+	# Terminal generation, and the ONLY spec in this weapon with a swarm profile -- the four
+	# stages above deliberately have none. Structurally this is a copy of sssrm_swarm_ship,
+	# the SRM submunition that has never crashed: plain guided missile, no behaviorSpec, no
+	# extra spec flags. A PROXIMITY_FUSE block and a pile of end-of-life fields were tried
+	# here while chasing a crash and neither helped, so both are gone.
+	"id":"sssrm_resonance_mote",
+	"specClass":"missile",
+	"missileType":"MISSILE",
+
+
+	"sprite":"graphics/missiles/resonator_mrm.png",
+	"size":[5,12],
+	"center":[2.5,6],
+	"collisionRadius":12,
+	"collisionClass":"MISSILE_NO_FF",
+	"explosionColor":[25,255,215,255],
+	"explosionRadius":45,
+	# Deliberately bare. This spec once also carried reduceDamageWhileFading, glowColor,
+	# glowRadius, useHitGlowWhenDestroyed and fizzleOnReachingWeaponRange, copied from the
+	# vanilla Resonator. With them, vanilla BasicShipAI would NPE on a null DamageType while
+	# sizing up an incoming mote -- a hard combat crash. The SRM submunitions carry none of
+	# them and have never crashed, so this matches their shape exactly.
+	# reduceDamageWhileFading is the prime suspect: motes fade at end of life, and that is
+	# when the crashes appeared. Re-add these one at a time if you want the visuals back.
+	"maxFlightTime":8,
+	"fadeTime":0.5,
+
+	# Faster than the SRM line's 355. That number exists to let quick fighters escape; an
+	# Omega weapon should not have that courtesy. 470 clears every vanilla and modded
+	# fighter except Glister (480) and sotf_volitionswarm (600).
+	"engineSpec":{"maxSpeed":900,
+				  "turnAcc":6000,
+				  "turnRate":720,
+				  "acc":3000,
+				  "dec":0},
+	"engineSlots":[{"id":"ES1",
+					"loc":[0, 0],
+					"style":"CUSTOM",
+					"styleSpec":{
+						"mode":"QUAD_STRIP",
+						"engineColor":[0,0,0,0],
+						"glowSizeMult":1.2,
+						"glowAlternateColor":[25,255,215,75],
+						"contrailDuration":1.5,
+						"contrailWidthMult":1,
+						"contrailWidthAddedFractionAtEnd":2,
+						"contrailMinSeg":5,
+						"contrailMaxSpeedMult":.0f,
+						"contrailAngularVelocityMult":0.5f,
+						"contrailSpawnDistMult":.5,
+						"contrailColor":[25,255,215,35],
+						"type":"GLOW"
+					},
+					"width":5.0,
+					"length":16.0,
+					"angle":180.0}]
+}
